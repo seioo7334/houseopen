@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>나르치스와 골드문트 | 공연 상세</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+@font-face {
+  font-family: 'ChangwonDangamRound';
+  src: url('./ChangwonDangamRound.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'ChangwonDangamRound', Arial, sans-serif;
+}
+
+.theater-stage {
+  position: relative;
+  min-height: 100vh;
+  background: url("curtain1.png") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.65)
+  );
+  z-index: 1;
+}
+
+
+.stage-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.93);
+  border-radius: 22px;
+  padding: 50px 60px;
+  max-width: 1000px;
+  width: 90%;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.45),
+    inset 0 0 25px rgba(255,255,255,0.6);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.poster {
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.section-title {
+  font-weight: 700;
+  margin-top: 28px;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .stage-content {
+    padding: 36px 28px;
+  }
+  .poster {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="theater-stage">
+  <div class="stage-overlay"></div>
+
+  <div class="stage-content">
+
+   
+    <a href="detail1.html" class="btn btn-outline-dark back-btn">
+      ← 공연 목록으로
+    </a>
+
+    <h2 class="mb-4">나르치스와 골드문트</h2>
+
+    <div class="row align-items-start">
+      <div class="col-md-4 text-center">
+        <img src="nar.png" class="poster" alt="나르치스와 골드문트 포스터">
+      </div>
+
+      <div class="col-md-8">
+        <p>
+          ‘운명이 우릴 끌어당겨 그 끝에서 우린 서로 마주 보고 얘기할 거야’. 
+          세상과 분리되어 있는 마리아브론 수도원. 그리고 아버지 손에 이끌려 그곳에 찾아온 어린 소년, 골드문트. 
+          마리아브론의 젊은 수도사 나르치스는 한눈에 골드문트를 알아보고 두 사람은 서로에게 마음이 끌린다. 
+          나르치스를 동경하며 그처럼 되기를 바라는 골드문트와 자신과는 완벽히 다른 골드문트가 수도원 생활에 힘들어하는 것을 보고 안타까워하는 나르치스, 
+          서로를 그저 바라만 보던 두 사람은 우연한 기회에 마음을 터놓고 친구가 된다. 
+          그리고 나르치스는 골드문트의 내면에 무언가 잃어버린 것이 있음을 꿰뚫어 보는데… 
+          정반대의 극점에서 대치하고 있는 나르치스와 골드문트. 
+          생과 사, 정신과 본능의 갈림길에서 이 둘은 서로를 마주하게 된다.
+        </p>
+
+        <h5 class="section-title">공연 스케줄</h5>
+        <table class="table table-bordered">
+          <tr><td>화,목,금</td><td>20:00</td></tr>
+          <tr><td>수</td><td>16:00 / 20:00</td></tr>
+          <tr><td>토</td><td>15:00 / 19:00</td></tr>
+           <tr><td>일,공휴일</td><td>14:00 / 18:00</td></tr>
+        </table>
+
+        <h5 class="section-title">할인 정보</h5>
+        <ul>
+          <li>프리뷰 할인 40% (12.25~12.28 공연에 한함)</li>
+          <li>청소년 할인 40% (관람일 기준 중, 고등학생 할인)</li>
+        </ul>
+
+        <p class="mb-2">
+  <i class="bi bi-geo-alt-fill me-1"></i>
+  <a href="detail2.html" class="text-decoration-none text-dark">
+    <strong>예스24아트원2관</strong>
+  </a><br>
+</p>
+
+        <div class="mt-4 action-buttons">
+          
+          <a href="detail3.html" class="btn btn-outline-dark">
+            후기 보러가기
+          </a>
+
+          
+          <a href="detail2.html" class="btn btn-outline-dark">
+            공연장 정보
+          </a>
+
+          
+          <a href="index.html" class="btn btn-dark">
+            <i class="bi bi-house-fill me-1"></i> 메인화면
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+

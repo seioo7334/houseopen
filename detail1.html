@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>공연 목록</title>
+
+<style>
+@font-face {
+    font-family: 'ChangwonDangamRound';
+    src: url('./fonts/ChangwonDangamRound.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: 'ChangwonDangamRound', sans-serif;
+    background: #fafafa;
+}
+
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+
+.title {
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.view-toggle button {
+    padding: 6px 14px;
+    border-radius: 6px;
+    border: 1px solid #aaa;
+    background: #fff;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.poster-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 14px;
+    padding: 20px;
+}
+
+.poster-item img {
+    display: block;
+    width: 100%;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #eaeaea;
+}
+
+.home-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+
+    background: #000;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 30px;
+    text-decoration: none;
+}
+
+
+.poster-item div {
+    margin-top: 8px;
+}
+
+
+.text-grid {
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    padding: 20px;
+}
+
+.text-item {
+    padding: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #fff;
+    cursor: pointer;
+}
+
+
+.home-btn {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+
+    background: #000;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 30px;
+    text-decoration: none;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    border: 2px solid #fff;
+}
+
+@media (max-width: 992px) {
+    .poster-grid, .text-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 576px) {
+    .poster-grid, .text-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+</style>
+
+<script>
+function showPosters() {
+    document.querySelector('.poster-grid').style.display = 'grid';
+    document.querySelector('.text-grid').style.display = 'none';
+}
+function showTitles() {
+    document.querySelector('.poster-grid').style.display = 'none';
+    document.querySelector('.text-grid').style.display = 'grid';
+}
+</script>
+</head>
+
+<body>
+
+<div class="top-bar">
+    <div class="title">공연</div>
+    <div class="view-toggle">
+        <button onclick="showPosters()">포스터 보기</button>
+        <button onclick="showTitles()">텍스트 보기</button>
+    </div>
+</div>
+
+<div class="poster-grid">
+    <div class="poster-item" onclick="location.href='t_eternity.html'">
+        <img src="eternity.png">
+        <div>이터니티</div>
+    </div>
+    <div class="poster-item" onclick="location.href='t_traceu.html'">
+        <img src="traceu.png">
+        <div>트레이스유</div>
+    </div>
+    <div class="poster-item" onclick="location.href='t_sim.html'">
+        <img src="sim.png">
+        <div>#0528</div>
+    </div>
+    <div class="poster-item" onclick="location.href='t_mid.html'">
+        <img src="mid.png">
+        <div>미드나잇</div>
+    </div>
+    <div class="poster-item" onclick="location.href='t_pra.html'">
+        <img src="pra.png">
+        <div>프라테르니테</div>
+    </div>
+    <div class="poster-item" onclick="location.href='t_a.html'">
+        <img src="a.png">
+        <div>아몬드</div>
+    </div>
+    <div class="poster-item" onclick="location.href='t_nar.html'">
+        <img src="nar.png">
+        <div>나르치스와 골드문트</div>
+    </div>
+    <div class="poster-item" onclick="location.href='t_small.html'">
+        <img src="small.png">
+        <div>난쟁이들</div>
+    </div>
+</div>
+
+<div class="text-grid">
+    <div class="text-item" onclick="location.href='performance1.html'">이터니티</div>
+    <div class="text-item" onclick="location.href='performance2.html'">트레이스유</div>
+    <div class="text-item" onclick="location.href='performance3.html'">#0528</div>
+</div>
+
+<a href="index.html" class="home-btn">🏠 메인화면</a>
+
+</body>
+</html>
+

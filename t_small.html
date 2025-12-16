@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>난쟁이들 | 공연 상세</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+@font-face {
+  font-family: 'ChangwonDangamRound';
+  src: url('./ChangwonDangamRound.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'ChangwonDangamRound', Arial, sans-serif;
+}
+
+.theater-stage {
+  position: relative;
+  min-height: 100vh;
+  background: url("curtain1.png") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.65)
+  );
+  z-index: 1;
+}
+
+
+.stage-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.93);
+  border-radius: 22px;
+  padding: 50px 60px;
+  max-width: 1000px;
+  width: 90%;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.45),
+    inset 0 0 25px rgba(255,255,255,0.6);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.poster {
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.section-title {
+  font-weight: 700;
+  margin-top: 28px;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .stage-content {
+    padding: 36px 28px;
+  }
+  .poster {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="theater-stage">
+  <div class="stage-overlay"></div>
+
+  <div class="stage-content">
+
+   
+    <a href="detail1.html" class="btn btn-outline-dark back-btn">
+      ← 공연 목록으로
+    </a>
+
+    <h2 class="mb-4">난쟁이들</h2>
+
+    <div class="row align-items-start">
+      <div class="col-md-4 text-center">
+        <img src="small.png" class="poster" alt="난쟁이들 포스터">
+      </div>
+
+      <div class="col-md-8">
+        <p>
+          왕자와 공주들의 아름다운 사랑이 이루어지는 동화나라! 
+          그 곳 난쟁이 마을에 난쟁이 찰리와 빅이 살고 있다. 
+          그들은 매일 광산에서 하루 종일 보석을 캐지만 아무리 열심히 벌어 봤자 답답한 현실에서 벗어날 기미가 보이지 않는다. 
+          그러던 어느 날, 동화나라에 무도회가 열린다는 공고가 난다. 
+          오랜 전통대로 무도회에서 진실한 키스를 해서 마법의 종을 울리는 커플이 새로운 동화의 주인공이 된다는 소식은 
+          인생 역전의 기회만 노리던 찰리의 심장을 뛰게 한다. 
+          그는 빅과 함께 재투성이 신데렐라를 공주로 만들어 준 마녀 할머니를 찾아가 자신을 왕자로 만들어 달라고 하지만 
+          마녀는 이제 개천에서 용 나던 시절은 지났다며 마법도 소용없다고 말한다. 
+          하지만 찰리와 빅은 포기하지 않고 급기야 마녀와 거래를 하게 되는데...
+        </p>
+
+        <h5 class="section-title">공연 스케줄</h5>
+        <table class="table table-bordered">
+           <tr><td>화,목,금</td><td>20:00</td></tr>
+           <tr><td>수</td><td>16:00 / 20:00</td></tr>
+          <tr><td>토</td><td>15:00 / 19:00</td></tr>
+           <tr><td>일</td><td>14:00 / 18:00</td></tr>
+        </table>
+
+        <h5 class="section-title">할인 정보</h5>
+        <ul>
+          <li>동화나라 재방문 할인 VIPP, RF석 25% (2015~2026 '난쟁이들' 실물 티켓 소지자)</li>
+          <li>청소년 할인 RF석 50% (08~10년 출생자 본인)</li>
+        </ul>
+
+        <p class="mb-2">
+  <i class="bi bi-geo-alt-fill me-1"></i>
+  <a href="detail2.html" class="text-decoration-none text-dark">
+    <strong>플러스씨어터</strong>
+  </a><br>
+</p>
+
+
+        
+        <div class="mt-4 action-buttons">
+          
+          <a href="detail3.html" class="btn btn-outline-dark">
+            후기 보러가기
+          </a>
+
+          
+          <a href="detail2.html" class="btn btn-outline-dark">
+            공연장 정보
+          </a>
+
+          
+          <a href="index.html" class="btn btn-dark">
+            <i class="bi bi-house-fill me-1"></i> 메인화면
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+

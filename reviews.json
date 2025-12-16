@@ -1,0 +1,38 @@
+[
+  {
+    "title": "배우 연기 미쳤어요",
+    "rating": 5,
+    "content": "소극장인데 몰입감이 장난 아니었어요.",
+    "author": "익명"
+  },
+  {
+    "title": "혜화 감성 그 자체",
+    "rating": 4,
+    "content": "스토리도 좋고 음악도 잘 어울렸어요.",
+    "author": "관객A"
+  },
+  {
+    "title": "눈물 났어요",
+    "rating": 5,
+    "content": "마지막 장면에서 진짜 울었습니다.",
+    "author": "관객B"
+  },
+  {
+    "title": "가성비 최고",
+    "rating": 4,
+    "content": "이 가격에 이 퀄리티면 무조건 추천.",
+    "author": "관객C"
+  },
+  {
+    "title": "연출이 세련됨",
+    "rating": 4,
+    "content": "무대 활용이 인상적이었어요.",
+    "author": "관객D"
+  },
+  {
+    "title": "또 보고 싶어요",
+    "rating": 5,
+    "content": "커튼콜에서 박수 멈출 수 없었어요.",
+    "author": "관객E"
+  }
+]

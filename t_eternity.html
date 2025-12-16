@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>이터니티 | 공연 상세</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+@font-face {
+  font-family: 'ChangwonDangamRound';
+  src: url('./ChangwonDangamRound.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'ChangwonDangamRound', Arial, sans-serif;
+}
+
+.theater-stage {
+  position: relative;
+  min-height: 100vh;
+  background: url("curtain1.png") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.65)
+  );
+  z-index: 1;
+}
+
+
+.stage-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.93);
+  border-radius: 22px;
+  padding: 50px 60px;
+  max-width: 1000px;
+  width: 90%;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.45),
+    inset 0 0 25px rgba(255,255,255,0.6);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.poster {
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.section-title {
+  font-weight: 700;
+  margin-top: 28px;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .stage-content {
+    padding: 36px 28px;
+  }
+  .poster {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="theater-stage">
+  <div class="stage-overlay"></div>
+
+  <div class="stage-content">
+
+   
+    <a href="detail1.html" class="btn btn-outline-dark back-btn">
+      ← 공연 목록으로
+    </a>
+
+    <h2 class="mb-4">이터니티</h2>
+
+    <div class="row align-items-start">
+      <div class="col-md-4 text-center">
+        <img src="eternity.png" class="poster" alt="이터니티 포스터">
+      </div>
+
+      <div class="col-md-8">
+        <p>
+          평행에 놓인 두 시간이 있다. 1960년대, 최고의 글램록 스타 ‘블루닷’. 
+          현재, 블루닷을 동경하며 글램록 스타를 꿈꾸는 ‘카이퍼’. 
+          하지만 현재는 이미 글램록과 블루닷을 잊어버린 듯하다. 
+          다시 1960년, 우주선에 영원의 레코드를 쏘아 보낸다는 뉴스로 온 세상이 시끄럽다. 
+          인류가 멸망한 후에도 사라지지 않을 영원의 음악. 
+          블루닷은 자신의 음악을 그 레코드에 실어 영원히 남기려 한다. 
+          하지만 그가 새로 발표하는 음악들은 대중에게서 외면받고, 
+          궁지에 몰린 블루닷은 ‘마그네틱 하이웨이’ 페스티벌에서 우주로 갈 음악을 들려주겠다고 선언해 버린다. 
+          그와 동시에 현재의 카이퍼도 기묘한 기회로 ‘마그네틱 하이웨이’에 참가하게 되고, 
+          두 사람은 다른 시간 속에서 하나의 음악을 써 내려가기 시작하는데….
+        </p>
+
+        <h5 class="section-title">공연 스케줄</h5>
+        <table class="table table-bordered">
+          <tr><td>화–금</td><td>20:00</td></tr>
+          <tr><td>토, 일, 공휴일</td><td>14:00 / 19:00</td></tr>
+          
+        </table>
+
+        <h5 class="section-title">할인 정보</h5>
+        <ul>
+          <li>조기예매 할인 30% (12.12~12.18 예매시) </li>
+          <li>재관람 할인 20% (2024, 2025 뮤지컬 '이터니티' 유료 티켓 소지) </li>
+          <li>마티네 할인 30% (금요일 오후 4시 공연 예매시)</li>
+        </ul>
+<p class="mb-2">
+  <i class="bi bi-geo-alt-fill me-1"></i>
+  <a href="detail2.html" class="text-decoration-none text-dark">
+    <strong>NOL유니플렉스</strong>
+  </a><br>
+</p>
+        
+        <div class="mt-4 action-buttons">
+          
+          <a href="detail3.html" class="btn btn-outline-dark">
+            후기 보러가기
+          </a>
+
+          
+          <a href="detail2.html" class="btn btn-outline-dark">
+            공연장 정보
+          </a>
+
+          
+          <a href="index.html" class="btn btn-dark">
+            <i class="bi bi-house-fill me-1"></i> 메인화면
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+
+

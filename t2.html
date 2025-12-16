@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>극장 상세</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+@font-face {
+    font-family: 'ChangwonDangamRound';
+    src: url('./ChangwonDangamRound.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'ChangwonDangamRound', sans-serif;
+    color: #000;
+  
+    background: 
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('stage.png') center/cover no-repeat fixed;
+}
+
+
+.page-wrapper {
+    padding: 60px 16px;
+}
+
+
+.info-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 32px 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+}
+
+
+.info-card h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    border-left: 4px solid #000;
+    padding-left: 10px;
+}
+
+
+ul {
+    padding-left: 18px;
+}
+
+
+.action-area {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.back-btn {
+    text-decoration: none;
+    color: #555;
+}
+
+
+.review-btn {
+    background: #000;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page-wrapper">
+
+    <div class="info-card">
+
+        <h2 id="theaterName">극장 이름</h2>
+
+        <h5 class="section-title">극장 특이사항 / 시야</h5>
+        <ul>
+            <li>전좌석 쾌적함</li>
+        <li>좌석 간격이 비교적 넓고 큰 관</li>
+        <li>냉방을 춥게 트는 경우 많음</li>
+        </ul>
+
+        <h5 class="section-title">가는 길</h5>
+        <p>혜화역 1번 출구에서 225m</p>
+
+        <div class="action-area">
+            <a href="javascript:history.back()" class="back-btn">← 뒤로가기</a>
+            <a href="detail3.html" class="review-btn">극장 후기 보기</a>
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+const params = new URLSearchParams(location.search);
+document.getElementById("theaterName").innerText =
+    params.get("name") || "링크아트센터";
+</script>
+
+</body>
+</html>

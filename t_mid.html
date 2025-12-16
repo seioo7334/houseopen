@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>미드나잇 | 공연 상세</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+@font-face {
+  font-family: 'ChangwonDangamRound';
+  src: url('./ChangwonDangamRound.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'ChangwonDangamRound', Arial, sans-serif;
+}
+
+.theater-stage {
+  position: relative;
+  min-height: 100vh;
+  background: url("curtain1.png") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.65)
+  );
+  z-index: 1;
+}
+
+
+.stage-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.93);
+  border-radius: 22px;
+  padding: 50px 60px;
+  max-width: 1000px;
+  width: 90%;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.45),
+    inset 0 0 25px rgba(255,255,255,0.6);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.poster {
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.section-title {
+  font-weight: 700;
+  margin-top: 28px;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .stage-content {
+    padding: 36px 28px;
+  }
+  .poster {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="theater-stage">
+  <div class="stage-overlay"></div>
+
+  <div class="stage-content">
+
+   
+    <a href="detail1.html" class="btn btn-outline-dark back-btn">
+      ← 공연 목록으로
+    </a>
+
+    <h2 class="mb-4">미드나잇</h2>
+
+    <div class="row align-items-start">
+      <div class="col-md-4 text-center">
+        <img src="mid.png" class="poster" alt="미드나잇 포스터">
+      </div>
+
+      <div class="col-md-8">
+        <p>
+          매일 밤, 사람들이 어딘가로 끌려가 쥐도 새도 모르게 사라지는 공포 시대.
+사랑과 믿음으로 서로를 다독이며 어려운 시절을 견뎌 낸 한 부부에게
+12월 31일 자정 직전, '쾅! 쾅! 쾅!' 세차게 문을 두드리는 소리와 함께 불길한 손님(비지터)이 찾아온다.
+두 사람의 치욕스러운 비밀을 하나씩 밝히며 부부를 두려움과 경멸에 떨게 만드는 '비지터'
+감당하기 힘든 진실에 괴로워하는 부부에게 '비지터'는 자신의 정체를 밝히며 최후의 선택을 강요한다.
+과연 '비지터'는 누구이며 이 부부는 어떤 선택을 할 것인가?
+        </p>
+
+        <h5 class="section-title">공연 스케줄</h5>
+        <table class="table table-bordered">
+          <tr><td>화,목,금</td><td>20:00</td></tr>
+          <tr><td>수</td><td>16:00 / 20:00</td></tr>
+          <tr><td>토</td><td>15:00 / 19:00</td></tr>
+          <tr><td>일, 공휴일</td><td>14:00 / 18:00</td></tr>
+        </table>
+
+        <h5 class="section-title">할인 정보</h5>
+        <ul>
+          <li>미드나잇 마니아 할인 25% (2017-2023 '미드나잇' 실물 유료 티켓 소지자)</li>
+          <li>재관람 할인 30% (2025-2026 '미드나잇:액터뮤지션' 실물 유료 티켓 소지자)</li>
+        </ul>
+
+        <p class="mb-2">
+  <i class="bi bi-geo-alt-fill me-1"></i>
+  <a href="detail2.html" class="text-decoration-none text-dark">
+    <strong>예스24아트원 1관</strong>
+  </a><br>
+</p>
+
+        <div class="mt-4 action-buttons">
+          
+          <a href="detail3.html" class="btn btn-outline-dark">
+            후기 보러가기
+          </a>
+
+          
+          <a href="detail2.html" class="btn btn-outline-dark">
+            공연장 정보
+          </a>
+
+          
+          <a href="index.html" class="btn btn-dark">
+            <i class="bi bi-house-fill me-1"></i> 메인화면
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+
+

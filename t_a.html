@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>아몬드 | 공연 상세</title>
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+@font-face {
+  font-family: 'ChangwonDangamRound';
+  src: url('./ChangwonDangamRound.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  margin: 0;
+  font-family: 'ChangwonDangamRound', Arial, sans-serif;
+}
+
+.theater-stage {
+  position: relative;
+  min-height: 100vh;
+  background: url("curtain1.png") no-repeat center top;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stage-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.65)
+  );
+  z-index: 1;
+}
+
+
+.stage-content {
+  position: relative;
+  z-index: 2;
+  background: rgba(255,255,255,0.93);
+  border-radius: 22px;
+  padding: 50px 60px;
+  max-width: 1000px;
+  width: 90%;
+  box-shadow:
+    0 30px 60px rgba(0,0,0,0.45),
+    inset 0 0 25px rgba(255,255,255,0.6);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+.poster {
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+.section-title {
+  font-weight: 700;
+  margin-top: 28px;
+}
+
+.back-btn {
+  margin-bottom: 20px;
+}
+
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .stage-content {
+    padding: 36px 28px;
+  }
+  .poster {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<section class="theater-stage">
+  <div class="stage-overlay"></div>
+
+  <div class="stage-content">
+
+   
+    <a href="detail1.html" class="btn btn-outline-dark back-btn">
+      ← 공연 목록으로
+    </a>
+
+    <h2 class="mb-4">아몬드</h2>
+
+    <div class="row align-items-start">
+      <div class="col-md-4 text-center">
+        <img src="a.png" class="poster" alt="아몬드 포스터">
+      </div>
+
+      <div class="col-md-8">
+        <p>
+          열 여섯 살 소년 윤재는 '감정표현불능증(Alexithymia)'을 앓고 있다. 
+          머릿속 아몬드 같은 모양의 편도체가 남들보다 작은 탓에 감정을 느끼는 것도, 
+          타인의 감정을 공감하는 것도 어려운 윤재는 엄마와 할머니의 사랑 속에서 감정을 학습하며, 적당히 보통 아이처럼 자라난다.
+          윤재의 열 여섯 번째 생일이자 크리스마스 이브였던 '그날', 
+          순식간에 벌어진 무차별 살인 사건으로 인해 윤재의 할머니는 세상을 떠나고 엄마는 식물인간이 된다. 
+          하루아침에 혼자가 된 윤재. 아직 배우지 못한 표정이 많은 윤재에게 타인과 어울리는 일은 늘 어렵기만 하다.
+          어느 날, 세상에 홀로 남겨진 윤재 앞에 분노로 가득찬 곤이가 나타난다. 
+          곤이는 윤재에게 화를 쏟아내지만 감정 동요가 없는 윤재 앞에서 오히려 쩔쩔매고 만다. 
+          윤재는 어쩐지 그런 곤이가 밉지 않고 오히려 궁금해진다.
+          남들은 이해할 수 없는 특별한 우정을 쌓으며, 윤재는 조금씩 내면의 변화를 겪는데...
+          서로 다른 이유로 '괴물'이라 불리는 두 소년은 세상으로 한 발짝 나아갈 수 있을까?
+        </p>
+
+        <h5 class="section-title">공연 스케줄</h5>
+        <table class="table table-bordered">
+          <tr><td>화,목,금</td><td>19:30</td></tr>
+          <tr><td>수</td><td>15:00 / 19:30</td></tr>
+          <tr><td>토, 일, 공휴일</td><td>14:00 / 18:30</td></tr>
+        </table>
+
+        <h5 class="section-title">할인 정보</h5>
+        <ul>
+          <li>조기예매 할인 25% (~11.9일 까지 예매시)</li>
+          <li>청소년 할인 30% (8세~19세 이하 청소년 본인)</li>
+          <li>소설 '아몬드' 도서 소지자 할인 20% (E북 가능)</li>
+        </ul>
+<p class="mb-2">
+  <i class="bi bi-geo-alt-fill me-1"></i>
+  <a href="detail2.html" class="text-decoration-none text-dark">
+    <strong>NOL유니플렉스 1관</strong>
+  </a><br>
+</p>
+        
+        <div class="mt-4 action-buttons">
+          
+          <a href="detail3.html" class="btn btn-outline-dark">
+            후기 보러가기
+          </a>
+
+          
+          <a href="detail2.html" class="btn btn-outline-dark">
+            공연장 정보
+          </a>
+
+          
+          <a href="index.html" class="btn btn-dark">
+            <i class="bi bi-house-fill me-1"></i> 메인화면
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
+

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>후기 작성</title>
+<style>
+
+     @font-face {
+            font-family: 'ChangwonDangamRound';
+            src: url('./ChangwonDangamRound.ttf') format('truetype'); /* 같은 폴더에 파일이 있을 때 */
+            /* src: url('./fonts/ChangwonDangamRound.ttf') format('truetype');  <- fonts/ 사용 시 이 줄로 대체 */
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+    body {
+    font-family: 'ChangwonDangamRound', Arial, sans-serif;
+}
+
+    h2 {
+        margin-bottom: 15px;
+    }
+
+    .top-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 9px 15px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        background: white;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+
+    #reviewBox {
+        width: 100%;
+        height: 180px;
+        border: 1px solid #ccc;
+        padding: 10px;
+        border-radius: 6px;
+        margin-top: 10px;
+        resize: none;
+        font-size: 1rem;
+    }
+
+    #submitBtn {
+        margin-top: 20px;
+        float: right;
+        padding: 10px 20px;
+        background: #222;
+        color: white;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* 모달 공통 스타일 */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.4);
+        justify-content: center;
+        align-items: center;
+    }
+    .modal-content {
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+        width: 300px;
+        box-shadow: 0 0 10px #aaa;
+        text-align: center;
+    }
+
+    .star {
+        font-size: 30px;
+        cursor: pointer;
+        color: lightgray;
+    }
+</style>
+</head>
+<body>
+
+<h2>후기 작성</h2>
+
+<!-- 버튼 영역 -->
+<div class="top-buttons">
+    <button onclick="openTypeModal()">공연/극장</button>
+    <button onclick="openDateModal()">관람일</button>
+    <button onclick="openStarModal()">별점</button>
+</div>
+
+<p id="selectedType" style="color:#555;"></p>
+<p id="selectedDate" style="color:#555;"></p>
+<p id="selectedStars" style="color:#555;"></p>
+
+<!-- 제목 입력 -->
+<input type="text" id="reviewTitle" placeholder="제목을 입력하세요"
+style="width:100%; padding:10px; margin-top:10px; border-radius:6px; border:1px solid #ccc;">
+
+<!-- 후기 내용 -->
+<textarea id="reviewBox">후기를 작성해주세요.</textarea>
+
+<!-- 등록 버튼 -->
+<button id="submitBtn" onclick="submitReview()">등록</button>
+
+
+
+
+<!-- ① 공연/극장 선택 모달 -->
+<div class="modal" id="typeModal">
+    <div class="modal-content">
+        <h3>구분 선택</h3>
+
+        <button onclick="selectReviewType('공연')">공연 후기</button><br><br>
+        <button onclick="selectReviewType('극장')">극장 후기</button><br><br>
+
+        <button onclick="closeTypeModal()">닫기</button>
+    </div>
+</div>
+
+
+<!-- ② 날짜 선택 모달 -->
+<div class="modal" id="dateModal">
+    <div class="modal-content">
+        <h3>관람일 선택</h3>
+        <input type="date" id="dateInput" style="padding:8px;"><br><br>
+        <button onclick="saveDate()">확인</button>
+    </div>
+</div>
+
+
+<!-- ③ 별점 선택 모달 -->
+<div class="modal" id="starModal">
+    <div class="modal-content">
+        <h3>별점 선택</h3>
+        <div id="starContainer">
+            <span class="star" onclick="setStar(1)">★</span>
+            <span class="star" onclick="setStar(2)">★</span>
+            <span class="star" onclick="setStar(3)">★</span>
+            <span class="star" onclick="setStar(4)">★</span>
+            <span class="star" onclick="setStar(5)">★</span>
+        </div>
+        <br>
+        <button onclick="closeStarModal()">확인</button>
+    </div>
+</div>
+
+
+
+
+<script>
+// -------------------- 1) 공연/극장 선택 --------------------
+let reviewType = "";
+let itemName = "";
+
+function openTypeModal() {
+    document.getElementById("typeModal").style.display = "flex";
+}
+function closeTypeModal() {
+    document.getElementById("typeModal").style.display = "none";
+}
+
+function selectReviewType(type) {
+    reviewType = type;
+    itemName = prompt(type + " 이름을 입력하세요.");
+
+    if (itemName) {
+        document.getElementById("selectedType").innerText = 
+            "구분: " + reviewType + " / " + itemName;
+    }
+
+    closeTypeModal();
+}
+
+
+// -------------------- 2) 날짜 선택 --------------------
+let selectedDate = "";
+
+function openDateModal() {
+    document.getElementById("dateModal").style.display = "flex";
+}
+
+function saveDate() {
+    selectedDate = document.getElementById("dateInput").value;
+    document.getElementById("selectedDate").innerText = "관람일: " + selectedDate;
+
+    document.getElementById("dateModal").style.display = "none";
+}
+
+
+// -------------------- 3) 별점 선택 --------------------
+let starScore = 0;
+
+function openStarModal() {
+    document.getElementById("starModal").style.display = "flex";
+}
+function closeStarModal() {
+    document.getElementById("starModal").style.display = "none";
+}
+
+function setStar(n) {
+    starScore = n;
+    document.getElementById("selectedStars").innerText = "별점: " + n + "점";
+
+    let stars = document.querySelectorAll(".star");
+    stars.forEach((el, i) => {
+        el.style.color = (i < n ? "gold" : "lightgray");
+    });
+}
+
+
+// -------------------- 4) placeholder 기능 --------------------
+let box = document.getElementById("reviewBox");
+box.addEventListener("focus", () => {
+    if (box.value === "후기를 작성해주세요.") box.value = "";
+});
+
+
+// -------------------- 5) 후기 저장 --------------------
+function submitReview() {
+    let title = document.getElementById("reviewTitle").value;
+    let content = document.getElementById("reviewBox").value;
+
+    if (!title || !content || !reviewType || !itemName || !selectedDate || !starScore) {
+        alert("⚠ 모든 항목을 입력해주세요!");
+        return;
+    }
+
+    let review = {
+        id: Date.now(),
+        type: reviewType,
+        item: itemName,
+        title: title,
+        content: content,
+        date: selectedDate,
+        stars: starScore,
+        likes: 0
+    };
+
+    // 저장
+    let list = JSON.parse(localStorage.getItem("reviews") || "[]");
+    list.push(review);
+    localStorage.setItem("reviews", JSON.stringify(list));
+
+    alert("후기가 등록되었습니다!");
+
+    location.href = "detail3.html"; // 리뷰 목록 페이지로 이동
+}
+</script>
+
+</body>
+</html>
